@@ -93,8 +93,8 @@ function showLocation(position) {
           data.stationboard.forEach(function(data){ 
             timetable.item(0, i++, 
             { 
-              title   : data.number + strings[language].to + data.to, 
-              subtitle: (typeof data.stop.prognosis  !== 'undefined') ? Moment(data.stop.prognosis.departure).fromNow() : Moment(data.stop.departureTimestamp).format('HH:mm')
+              title   : data.number + " " + data.to, 
+              subtitle: (data.stop.prognosis.departure  !== null) ? Moment(data.stop.prognosis.departure).fromNow() : Moment.unix(data.stop.departureTimestamp).format('HH:mm')
             });  
           });
           load.hide();

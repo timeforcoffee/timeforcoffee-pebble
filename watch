@@ -1,0 +1,7 @@
+#!/bin/bash
+export PEBBLE_PHONE=192.168.192.22
+export PEBBLE_PLATFORM=basalt
+pebble clean
+pebble build
+pebble install --phone $PEBBLE_PHONE build/timeforcoffee-pebble.pbw
+pebble logs --phone $PEBBLE_PHONE
